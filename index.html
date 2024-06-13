@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1>Metodo de cramer</h1>
+	<br>
+	<h2>Forma general</h2>
+	<br>
+	<p> a1x1+b1y1=c1</p>
+	<p> a2x2+b2y2=c2</p>
+	<br>
+	<p> Captura a1,b1,c1,a2,b2,c2</p>
+	<br>
+	<input type="text" id="a1" placeholder="a1"> x1+
+	<input type="text" id="b1" placeholder="b1"> y1=
+	<input type="text" id="c1" placeholder="c1">
+	<br>
+	<input type="text" id="a2" placeholder="a2">x2+
+	<input type="text" id="b2" placeholder="b2">y2=
+	<input type="text" id="c2" placeholder="c2">
+	<br><br>
+	<input type="button" value="Resolver " onclick="solve()"> <br></br>
+	<h1>Resultado</h1>
+	<p>
+
+	x = <input type="text" id="x">
+</p>
+<p>
+	y = <input type="text" id="y">
+	</p>
+		<script>
+			function solve() {
+	var a1=document.getElementById('a1').value;
+	var b1=document.getElementById('b1').value;
+	var c1=document.getElementById('c1').value;
+	var a2=document.getElementById('a2').value;
+	var b2=document.getElementById('b2').value;
+	var c2=document.getElementById('c2').value;
+
+	a1=parseFloat(a1);
+	b1=parseFloat(b1);
+	c1=parseFloat(c1);
+	a2=parseFloat(a2);
+	b2=parseFloat(b2);
+	c2=parseFloat(c2);
+
+	             var D = a1*b2-a2*b1;
+	             var Dx = c1*b2-c2*b1;
+	             var Dy = a1*c2-a2*c1;
+	             if (D ==0) {
+	             	alert("sin solucion");
+	             }else{
+	             	var x = Dx /D;
+	             	var y = Dy /D;
+	             	document.getElementById('x').value = x;
+	             	document.getElementById('y').value = y;
+	             }
+	         }
+	
+		</script>
+	
+	
+</body>
+</html>
